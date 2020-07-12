@@ -59,4 +59,7 @@ public class Warehouse implements Serializable {
     public Product getProduct() {
         return this.product;
     }
+
+    public void setProduct(Object product) {
+    }
 }
