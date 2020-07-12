@@ -8,8 +8,5 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<Product,String> {
 
-    @Query(value = "SELECT product.code, product.name, product.weight, location.location,location.quantity " +
-            "FROM product INNER JOIN location ON product.code=location.productCode;", nativeQuery = true)
-    List<Product> listAllProducts();
 
 }

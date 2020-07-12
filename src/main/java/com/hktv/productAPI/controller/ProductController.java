@@ -7,25 +7,34 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = { "*"})
+@CrossOrigin(origins = {"*"})
 @RestController
+@RequestMapping("/api")
 public class ProductController {
 
     @Autowired
-    ProductRepository ProductRepository;
+    ProductRepository productRepository;
 
-    // Get All prodcuts
     @GetMapping("/products")
-    public List<Product> getAllProducts() {
-        System.out.println(ProductRepository.listAllProducts());
-        return ProductRepository.listAllProducts();
+    public List<Product> getAllStudents() {
+        return productRepository.findAll();
     }
 
-    // Create a new product
-    @PostMapping("/product")
-    public Product addProdcut(@Valid @RequestBody Product product) {
-        return ProductRepository.save(product);
-    }
+
+
+
+//    // Get All prodcuts
+//    @GetMapping("/products")
+//    public List<Product> getAllProducts() {
+//        System.out.println(ProductRepository.listAllProducts());
+//        return ProductRepository.listAllProducts();
+//    }
+//
+//    // Create a new product
+//    @PostMapping("/product")
+//    public Product addProdcut(@Valid @RequestBody Product product) {
+//        return ProductRepository.save(product);
+//    }
 
 //    // Get a Single Note
 //    @GetMapping("/products/{code}")
