@@ -27,44 +27,4 @@ public class WarehouseController {
         return warehouseRepository.findByProductCode(productCode);
     }
 
-//    @PostMapping("/products/{code}/warehouses")
-//    public Warehouse addWarehouse(@PathVariable String productCode,
-//                                    @Valid @RequestBody Warehouse warehouse) {
-//        return warehouseRepository.findByProductCode(productCode)
-//                .map(product -> {
-//                    warehouse.setProduct(product);
-//                    return warehouseRepository.save(product);
-//                }).orElseThrow(() -> new NotFoundException("Product not found!"));
-//    }
-
-//    @PutMapping("/products/{code}/warehouses/{location}")
-//    public Warehouse updateWarehouse(@PathVariable String location,
-//                                       @PathVariable int quantity,
-//                                       @Valid @RequestBody Warehouse warehouseUpdated) throws NotFoundException {
-//
-//        if(!warehouseRepository.existsById(location)) {
-//            throw new NotFoundException("Student not found!");
-//        }
-//
-//        return warehouseUpdated.findById(location)
-//                .map(warehouse -> {
-//                    warehouse.setQuantity(warehouseUpdated.getQuantity());
-//                    return warehouseRepository.save(warehouse);
-//                }).orElseThrow(() -> new NotFoundException("Warehouse not found!"));
-//    }
-
-//    @DeleteMapping("/students/{studentId}/assignments/{assignmentId}")
-//    public String deleteAssignment(@PathVariable Long studentId,
-//                                   @PathVariable Long assignmentId) {
-//
-//        if(!warehouseRepository.existsById(studentId)) {
-//            throw new NotFoundException("Student not found!");
-//        }
-//
-//        return assignmentRepository.findById(assignmentId)
-//                .map(assignment -> {
-//                    assignmentRepository.delete(assignment);
-//                    return "Deleted Successfully!";
-//                }).orElseThrow(() -> new NotFoundException("Contact not found!"));
-//    }
 }
